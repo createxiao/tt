@@ -46,19 +46,20 @@
   };
 </script>
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="面试经常被问到的一个问题 Java创建多线程的方式有哪几种啊？  万变不离其中，那就是new Thread的方式   在Java中，Thread这个是线程类，按理说我们创建一个线程对象，那就应该是new Tread的方式啊，我们先来看我们平常都是怎么去创建一个线程的，一般的我们推荐实现接口的方式，这是源于Java的单继承多实现，我们来一起看下代码： 123456789101112131415161">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://createxiao.github.io/2020/01/13/hello-world/index.html">
+<meta property="og:title" content="Thread">
+<meta property="og:url" content="https://createxiao.github.io/2020/04/11/Thread/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="面试经常被问到的一个问题 Java创建多线程的方式有哪几种啊？  万变不离其中，那就是new Thread的方式   在Java中，Thread这个是线程类，按理说我们创建一个线程对象，那就应该是new Tread的方式啊，我们先来看我们平常都是怎么去创建一个线程的，一般的我们推荐实现接口的方式，这是源于Java的单继承多实现，我们来一起看下代码： 123456789101112131415161">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-01-13T14:07:29.105Z">
-<meta property="article:modified_time" content="2020-01-13T14:07:29.105Z">
+<meta property="article:published_time" content="2020-04-11T12:30:43.000Z">
+<meta property="article:modified_time" content="2020-04-11T12:48:32.831Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://createxiao.github.io/2020/01/13/hello-world/">
+<link rel="canonical" href="https://createxiao.github.io/2020/04/11/Thread/">
 
 
 <script id="page-configurations">
@@ -70,7 +71,7 @@
   };
 </script>
 
-  <title>Hello World | Hexo</title>
+  <title>Thread | Hexo</title>
   
 
 
@@ -174,7 +175,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="https://createxiao.github.io/2020/01/13/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://createxiao.github.io/2020/04/11/Thread/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/tt/images/avatar.gif">
@@ -187,7 +188,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hello World
+          Thread
         </h1>
 
         <div class="post-meta">
@@ -196,8 +197,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2020-01-13 22:07:29" itemprop="dateCreated datePublished" datetime="2020-01-13T22:07:29+08:00">2020-01-13</time>
+              <time title="Created: 2020-04-11 20:30:43 / Modified: 20:48:32" itemprop="dateCreated datePublished" datetime="2020-04-11T20:30:43+08:00">2020-04-11</time>
             </span>
 
           
@@ -211,19 +213,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h2 id="面试经常被问到的一个问题-Java创建多线程的方式有哪几种啊？"><a href="#面试经常被问到的一个问题-Java创建多线程的方式有哪几种啊？" class="headerlink" title="面试经常被问到的一个问题 Java创建多线程的方式有哪几种啊？  "></a>面试经常被问到的一个问题 <strong>Java创建多线程的方式有哪几种啊？</strong>  </h2><p>万变不离其中，那就是new Thread的方式  </p>
+<p>在Java中，Thread这个是线程类，按理说我们创建一个线程对象，那就应该是new Tread的方式啊，我们先来看我们平常都是怎么去创建一个线程的，一般的我们推荐实现接口的方式，这是源于Java的单继承多实现，我们来一起看下代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyThread</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"实现Runnbale的方式……"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取线程数</span></span><br><span class="line">        ThreadGroup threadGroup = Thread.currentThread().getThreadGroup();</span><br><span class="line">        <span class="keyword">while</span>(threadGroup.getParent() != <span class="keyword">null</span>)&#123;</span><br><span class="line">            threadGroup = threadGroup.getParent();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> totalThread = threadGroup.activeCount();</span><br><span class="line">        System.out.println(<span class="string">"当前线程数："</span>+totalThread);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -232,17 +224,20 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tt/tags/java/" rel="tag"># java</a>
+          </div>
 
         
 
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/tt/2020/01/14/Programming-environment-setup/" rel="next" title="Programming environment setup: ">
-      Programming environment setup:  <i class="fa fa-chevron-right"></i>
+    <a href="/tt/2020/04/11/Lambda/" rel="prev" title="Lambda">
+      <i class="fa fa-chevron-left"></i> Lambda
     </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -302,7 +297,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#面试经常被问到的一个问题-Java创建多线程的方式有哪几种啊？"><span class="nav-number">1.</span> <span class="nav-text">面试经常被问到的一个问题 Java创建多线程的方式有哪几种啊？  </span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
