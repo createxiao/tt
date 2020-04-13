@@ -53,13 +53,13 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="事务初识事务是逻辑上的一组操作，要么全部成功，要么全部失败。 事务具有ACID特性，参考百度百科，具体如下： 1234567原子性（Atomicity）：整个事务中的所有操作，要么全部完成，要么全部不完成，不可能停滞在中间某个环节。一致性（Consistency）：事务必须始终保持系统处于一致的状态，不管在任何给定的时间并发事务有多少。隔离性（Isolation）：隔离状态执行事务，使它们好像是系">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://createxiao.github.io/tt/2020/04/12/Manager/transaction.png">
+<meta property="og:image" content="https://createxiao.github.io/tt/2020/04/12/Transaction-Manager/transaction.png">
 <meta property="article:published_time" content="2020-04-12T15:18:10.000Z">
-<meta property="article:modified_time" content="2020-04-12T15:31:07.552Z">
+<meta property="article:modified_time" content="2020-04-13T01:30:10.507Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://createxiao.github.io/tt/2020/04/12/Manager/transaction.png">
+<meta name="twitter:image" content="https://createxiao.github.io/tt/2020/04/12/Transaction-Manager/transaction.png">
 
 <link rel="canonical" href="https://createxiao.github.io/2020/04/12/Transaction-Manager/">
 
@@ -199,10 +199,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-04-12 23:18:10 / Modified: 23:31:07" itemprop="dateCreated datePublished" datetime="2020-04-12T23:18:10+08:00">2020-04-12</time>
+              <time title="Created: 2020-04-12 23:18:10" itemprop="dateCreated datePublished" datetime="2020-04-12T23:18:10+08:00">2020-04-12</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-04-13 09:30:10" itemprop="dateModified" datetime="2020-04-13T09:30:10+08:00">2020-04-13</time>
+              </span>
 
           
 
@@ -218,7 +224,7 @@
         <h1 id="事务初识"><a href="#事务初识" class="headerlink" title="事务初识"></a>事务初识</h1><p>事务是逻辑上的一组操作，要么全部成功，要么全部失败。</p>
 <p>事务具有ACID特性，参考百度百科，具体如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">原子性（Atomicity）：整个事务中的所有操作，要么全部完成，要么全部不完成，不可能停滞在中间某个环节。</span><br><span class="line"></span><br><span class="line">一致性（Consistency）：事务必须始终保持系统处于一致的状态，不管在任何给定的时间并发事务有多少。</span><br><span class="line"></span><br><span class="line">隔离性（Isolation）：隔离状态执行事务，使它们好像是系统在给定时间内执行的唯一操作。</span><br><span class="line"></span><br><span class="line">持久性（Durability）：在事务完成以后，该事务对数据库所作的更改便持久的保存在数据库之中，并不会被回滚。</span><br></pre></td></tr></table></figure>
-<h3 id="核心接口API"><a href="#核心接口API" class="headerlink" title="核心接口API"></a>核心接口API</h3><p><img src="https://createxiao.github.io/tt/2020/04/12/Manager/transaction.png" alt="transaction"></p>
+<h3 id="核心接口API"><a href="#核心接口API" class="headerlink" title="核心接口API"></a>核心接口API</h3><p><img src="https://createxiao.github.io/tt/2020/04/12/Transaction-Manager/transaction.png" alt="transaction"></p>
 <p>如上图，Spring事务管理高层抽象主要有3个：</p>
 <p>PlatformTransactionManager :事务管理器(用来管理事务，包含事务的提交，回滚)</p>
 <p>TransactionDefinition :事务定义信息(隔离，传播，超时，只读)</p>
